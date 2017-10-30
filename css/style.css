@@ -1,0 +1,42 @@
+body {
+	
+    background: #fff url("../images/background.png") no-repeat 0% 20%;
+
+	opacity: 0.8;
+	
+}
+.background{
+	padding-bottom:40px;
+	background: #fff url("../images/petImage/background.png") repeat ;
+	
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(ComicSandchez.ttf);
+}
+
+div{
+    font-family: myFirstFont;
+	/*font-size: 110%;*/
+	color: #ff5177;
+}
+
+.imageClass {
+    height: 350px;
+
+}
+
+.btn-baby { color: #FFF; background-color: #ff99c2;
+
+}
+
+.btn-test:hover { color: #800000; background-color: #FF5733; }
+
+.modal-header{
+	color: #FFF; background-color: #ff99c2;
+}
+
+.modal-footer{
+	color: #FFF; background-color: #ff99c2;
+}

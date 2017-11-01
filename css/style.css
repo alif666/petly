@@ -22,8 +22,10 @@ div{
 	color: #ff5177;
 }
 
-.imageClass {
-    height: 350px;
+.img {
+    height:250px;
+    width:100%;
+}
 
 }
 

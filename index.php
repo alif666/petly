@@ -47,7 +47,7 @@ $resultQuery =  $conn->query($query);
 			<button type="button" class="btn btn-baby btn-block">Accessories</button><br>
 			 <div class="panel-group">
 
-					<h4 class="panel-title">
+					<!--<h4 class="panel-title">
 					  <a type="button" class="btn btn-baby btn-block" data-toggle="collapse" href="#collapse1">VIEW CART</a>
 					</h4>
 				  <div id="collapse1" class="panel-collapse collapse">
@@ -56,7 +56,7 @@ $resultQuery =  $conn->query($query);
 					  <li class="list-group-item">Two</li>
 					  <li class="list-group-item">Three</li>
 					</ul>
-				  </div>
+				  </div>-->
 
 			  </div>
 		</div>
@@ -64,12 +64,12 @@ $resultQuery =  $conn->query($query);
 						 
 						<?php while($rowQuery = $resultQuery->fetch_assoc()) {?>
 							<div class = "col-md-6">
-								<div class = "thumbnail imageClass">
+								<div class = "imageClass">
 									<img class="img-responsive" src="images/petImage/<?php echo $rowQuery['pet_image_location'];?>" alt="Chania"> 
 									<h2><?php echo $rowQuery['pet_name'];?></h2>
 									<h3>Price : <?php echo $rowQuery['pet_price'];?></h3>
 								</div>
-								<button id = "<?php echo $rowQuery['pet_id'];?>"type="button" class="btn btn-baby btn-block">ADD TO CART</button><br>
+								<button id = "<?php echo $rowQuery['pet_id'];?>"type="button" class="btn btn-baby btn-block">BUY</button><br>
 							</div>
 					<?php }?>
 		</div>

@@ -32,15 +32,11 @@ if (!empty($_POST['petAddress'])) {
 //get address ends
 
 //get  contact number 
-$petContact = "";
+
 if (!empty($_POST['petContact'])) {
 	$petContact = $_POST['petContact'];
 }
 //get contact ends
-
-
-
-
 $target_dir = "images/petImage/";
 $target_file = $target_dir.$petName.'_'.basename($_FILES["fileToUpload"]["name"]);
 
@@ -83,14 +79,14 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		$petId = MakeID($pet_name,$pet_price,$pet_contact_no,3);
+		//$petId = date("D M d, Y G:i");
+		$petId = rand(11,99).$petContact;
 		$fileName = basename( $_FILES["fileToUpload"]["name"]);
 		echo "the file  ".$dbTargetFile." has been uploaded";
 //query to insert in database
 				$rs=mysqli_query($conn, "INSERT INTO `pet`(`pet_id`,`pet_name`, `pet_price`,`pet_address`, `pet_contact_no`, `pet_mail`) VALUES ('".$petId."','".$petName."','".$petPrice."','".$petAddress."','".$petContact."','".$petEmail."')"); 
-				$rs1=mysqli_query($conn, "INSERT INTO `pet_image`(`pet_id `, `pet_image_location`) VALUES ('".$petId."','".$dbTargetFile."'"); 
-				
-				echo "<script>windows.location.href = 'index.php';</script>";				
+				$rs1=mysqli_query($conn, "INSERT INTO `pet_image`(`pet_id`,`pet_image_location`) VALUES ('".$petId."','".$dbTargetFile."')"); 
+				echo "<script>window.location.href = 'index.php';</script>";
 //query to insert in database ends	
 	
 		}else {
